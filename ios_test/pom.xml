@@ -90,6 +90,18 @@
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>com.example</groupId>
+          <artifactId>appiumService</artifactId>
+          <version>0.1</version>
+          <scope>test</scope>
+      </dependency>
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>appiumService</artifactId>
+      <version>0.1</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>

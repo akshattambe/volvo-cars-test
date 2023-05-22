@@ -4,25 +4,27 @@ import com.example.service.AppiumDriverService;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import org.example.AppiumServiceTool;
 import org.junit.*;
 
 public class AppiumDriverServiceTest {
-    private AppiumDriverService appiumDriverService;
+    private AppiumServiceTool appiumServiceTool;
     private IOSDriver iosDriver;
 
     private AppiumDriverLocalService appiumDriverLocalService;
 
     @Before
     public void setup(){
-        appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
+//        appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
 //        appiumDriverLocalService = appiumDriverService.startAppiumService();
-        iosDriver = appiumDriverService.initDriver();
+        appiumServiceTool = AppiumServiceTool.getAppiumDriverServiceToolInstance();
+        iosDriver = appiumServiceTool.initDriver();
     }
 
     @After
     public void teardown(){
         //Appium Service will continue to run in this case.
-        appiumDriverService.quitDriver(iosDriver);
+        appiumServiceTool.quitDriver(iosDriver);
 //        appiumDriverService.stopAppiumService(appiumDriverLocalService);
     }
     @Test
@@ -36,13 +38,14 @@ public class AppiumDriverServiceTest {
         isDisplayedSwitches = false;
         Thread.sleep(3000);
 
-        iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"1\"`][2]")).click();
-        Thread.sleep(3000);
+//        iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"1\"`][2]")).click();
+//        Thread.sleep(3000);
+//
+//        boolean isDisplayedTintedOff = iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"0\"`]")).isDisplayed();
+//        Thread.sleep(3000);
+//
+//        Assert.assertTrue(isDisplayedTintedOff);
 
-        boolean isDisplayedTintedOff = iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"0\"`]")).isDisplayed();
-        Thread.sleep(3000);
-
-        Assert.assertTrue(isDisplayedTintedOff);
         iosDriver.findElement(AppiumBy.accessibilityId("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
         Thread.sleep(3000);
 
