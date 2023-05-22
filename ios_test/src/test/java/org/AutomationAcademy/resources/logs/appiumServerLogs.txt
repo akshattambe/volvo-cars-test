@@ -1,0 +1,393 @@
+2023-05-19 22:11:28:630 [Appium] Welcome to Appium v1.22.3
+2023-05-19 22:11:28:631 [Appium] Non-default server args:
+2023-05-19 22:11:28:631 [Appium]   address: 127.0.0.1
+2023-05-19 22:11:28:631 [Appium]   logFile: /Users/akshat.tambe/Documents/myGitHub/volvo-cars-test/ios_test/src/test/java/org/AutomationAcademy/resources/logs/appiumServerLogs.txt
+2023-05-19 22:11:28:632 [Appium]   localTimezone: true
+2023-05-19 22:11:28:647 [Appium] Appium REST http interface listener started on 127.0.0.1:4723
+2023-05-19 22:11:28:964 [HTTP] --> GET /status
+2023-05-19 22:11:28:965 [HTTP] {}
+2023-05-19 22:11:28:974 [HTTP] No route found for /status
+2023-05-19 22:11:28:979 [HTTP] <-- GET /status 404 13 ms - 211
+2023-05-19 22:11:28:979 [HTTP] 
+2023-05-19 22:11:29:308 [HTTP] --> GET /status
+2023-05-19 22:11:29:309 [HTTP] {}
+2023-05-19 22:11:29:320 [HTTP] No route found for /status
+2023-05-19 22:11:29:321 [HTTP] <-- GET /status 404 12 ms - 211
+2023-05-19 22:11:29:321 [HTTP] 
+2023-05-19 22:11:29:643 [HTTP] --> GET /status
+2023-05-19 22:11:29:644 [HTTP] {}
+2023-05-19 22:11:29:644 [HTTP] No route found for /status
+2023-05-19 22:11:29:645 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:29:645 [HTTP] 
+2023-05-19 22:11:29:972 [HTTP] --> GET /status
+2023-05-19 22:11:29:972 [HTTP] {}
+2023-05-19 22:11:29:972 [HTTP] No route found for /status
+2023-05-19 22:11:29:973 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:29:973 [HTTP] 
+2023-05-19 22:11:30:300 [HTTP] --> GET /status
+2023-05-19 22:11:30:300 [HTTP] {}
+2023-05-19 22:11:30:300 [HTTP] No route found for /status
+2023-05-19 22:11:30:301 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:30:301 [HTTP] 
+2023-05-19 22:11:30:627 [HTTP] --> GET /status
+2023-05-19 22:11:30:628 [HTTP] {}
+2023-05-19 22:11:30:628 [HTTP] No route found for /status
+2023-05-19 22:11:30:629 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:30:629 [HTTP] 
+2023-05-19 22:11:30:957 [HTTP] --> GET /status
+2023-05-19 22:11:30:957 [HTTP] {}
+2023-05-19 22:11:30:957 [HTTP] No route found for /status
+2023-05-19 22:11:30:958 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:30:958 [HTTP] 
+2023-05-19 22:11:31:283 [HTTP] --> GET /status
+2023-05-19 22:11:31:284 [HTTP] {}
+2023-05-19 22:11:31:284 [HTTP] No route found for /status
+2023-05-19 22:11:31:285 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:31:285 [HTTP] 
+2023-05-19 22:11:31:608 [HTTP] --> GET /status
+2023-05-19 22:11:31:608 [HTTP] {}
+2023-05-19 22:11:31:608 [HTTP] No route found for /status
+2023-05-19 22:11:31:609 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:31:609 [HTTP] 
+2023-05-19 22:11:31:933 [HTTP] --> GET /status
+2023-05-19 22:11:31:933 [HTTP] {}
+2023-05-19 22:11:31:934 [HTTP] No route found for /status
+2023-05-19 22:11:31:934 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:31:934 [HTTP] 
+2023-05-19 22:11:32:259 [HTTP] --> GET /status
+2023-05-19 22:11:32:260 [HTTP] {}
+2023-05-19 22:11:32:260 [HTTP] No route found for /status
+2023-05-19 22:11:32:261 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:32:261 [HTTP] 
+2023-05-19 22:11:32:585 [HTTP] --> GET /status
+2023-05-19 22:11:32:585 [HTTP] {}
+2023-05-19 22:11:32:585 [HTTP] No route found for /status
+2023-05-19 22:11:32:586 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:32:586 [HTTP] 
+2023-05-19 22:11:32:909 [HTTP] --> GET /status
+2023-05-19 22:11:32:909 [HTTP] {}
+2023-05-19 22:11:32:909 [HTTP] No route found for /status
+2023-05-19 22:11:32:910 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:32:910 [HTTP] 
+2023-05-19 22:11:33:235 [HTTP] --> GET /status
+2023-05-19 22:11:33:235 [HTTP] {}
+2023-05-19 22:11:33:235 [HTTP] No route found for /status
+2023-05-19 22:11:33:236 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:33:236 [HTTP] 
+2023-05-19 22:11:33:562 [HTTP] --> GET /status
+2023-05-19 22:11:33:562 [HTTP] {}
+2023-05-19 22:11:33:563 [HTTP] No route found for /status
+2023-05-19 22:11:33:563 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:33:563 [HTTP] 
+2023-05-19 22:11:33:887 [HTTP] --> GET /status
+2023-05-19 22:11:33:888 [HTTP] {}
+2023-05-19 22:11:33:888 [HTTP] No route found for /status
+2023-05-19 22:11:33:889 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:33:889 [HTTP] 
+2023-05-19 22:11:34:215 [HTTP] --> GET /status
+2023-05-19 22:11:34:215 [HTTP] {}
+2023-05-19 22:11:34:215 [HTTP] No route found for /status
+2023-05-19 22:11:34:216 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:34:216 [HTTP] 
+2023-05-19 22:11:34:541 [HTTP] --> GET /status
+2023-05-19 22:11:34:541 [HTTP] {}
+2023-05-19 22:11:34:542 [HTTP] No route found for /status
+2023-05-19 22:11:34:542 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:34:542 [HTTP] 
+2023-05-19 22:11:34:867 [HTTP] --> GET /status
+2023-05-19 22:11:34:867 [HTTP] {}
+2023-05-19 22:11:34:867 [HTTP] No route found for /status
+2023-05-19 22:11:34:868 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:34:868 [HTTP] 
+2023-05-19 22:11:35:191 [HTTP] --> GET /status
+2023-05-19 22:11:35:192 [HTTP] {}
+2023-05-19 22:11:35:192 [HTTP] No route found for /status
+2023-05-19 22:11:35:193 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:35:193 [HTTP] 
+2023-05-19 22:11:35:519 [HTTP] --> GET /status
+2023-05-19 22:11:35:519 [HTTP] {}
+2023-05-19 22:11:35:520 [HTTP] No route found for /status
+2023-05-19 22:11:35:521 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:35:521 [HTTP] 
+2023-05-19 22:11:35:845 [HTTP] --> GET /status
+2023-05-19 22:11:35:845 [HTTP] {}
+2023-05-19 22:11:35:846 [HTTP] No route found for /status
+2023-05-19 22:11:35:846 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:35:847 [HTTP] 
+2023-05-19 22:11:36:171 [HTTP] --> GET /status
+2023-05-19 22:11:36:172 [HTTP] {}
+2023-05-19 22:11:36:172 [HTTP] No route found for /status
+2023-05-19 22:11:36:173 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:36:173 [HTTP] 
+2023-05-19 22:11:36:500 [HTTP] --> GET /status
+2023-05-19 22:11:36:500 [HTTP] {}
+2023-05-19 22:11:36:501 [HTTP] No route found for /status
+2023-05-19 22:11:36:501 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:36:501 [HTTP] 
+2023-05-19 22:11:36:825 [HTTP] --> GET /status
+2023-05-19 22:11:36:825 [HTTP] {}
+2023-05-19 22:11:36:825 [HTTP] No route found for /status
+2023-05-19 22:11:36:826 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:36:826 [HTTP] 
+2023-05-19 22:11:37:150 [HTTP] --> GET /status
+2023-05-19 22:11:37:151 [HTTP] {}
+2023-05-19 22:11:37:151 [HTTP] No route found for /status
+2023-05-19 22:11:37:152 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:37:152 [HTTP] 
+2023-05-19 22:11:37:480 [HTTP] --> GET /status
+2023-05-19 22:11:37:480 [HTTP] {}
+2023-05-19 22:11:37:480 [HTTP] No route found for /status
+2023-05-19 22:11:37:481 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:37:481 [HTTP] 
+2023-05-19 22:11:37:808 [HTTP] --> GET /status
+2023-05-19 22:11:37:808 [HTTP] {}
+2023-05-19 22:11:37:809 [HTTP] No route found for /status
+2023-05-19 22:11:37:809 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:37:809 [HTTP] 
+2023-05-19 22:11:38:135 [HTTP] --> GET /status
+2023-05-19 22:11:38:135 [HTTP] {}
+2023-05-19 22:11:38:136 [HTTP] No route found for /status
+2023-05-19 22:11:38:136 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:38:136 [HTTP] 
+2023-05-19 22:11:38:464 [HTTP] --> GET /status
+2023-05-19 22:11:38:464 [HTTP] {}
+2023-05-19 22:11:38:464 [HTTP] No route found for /status
+2023-05-19 22:11:38:465 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:38:465 [HTTP] 
+2023-05-19 22:11:38:792 [HTTP] --> GET /status
+2023-05-19 22:11:38:792 [HTTP] {}
+2023-05-19 22:11:38:793 [HTTP] No route found for /status
+2023-05-19 22:11:38:793 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:38:794 [HTTP] 
+2023-05-19 22:11:39:121 [HTTP] --> GET /status
+2023-05-19 22:11:39:121 [HTTP] {}
+2023-05-19 22:11:39:121 [HTTP] No route found for /status
+2023-05-19 22:11:39:122 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:39:122 [HTTP] 
+2023-05-19 22:11:39:445 [HTTP] --> GET /status
+2023-05-19 22:11:39:445 [HTTP] {}
+2023-05-19 22:11:39:446 [HTTP] No route found for /status
+2023-05-19 22:11:39:446 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:39:446 [HTTP] 
+2023-05-19 22:11:39:770 [HTTP] --> GET /status
+2023-05-19 22:11:39:770 [HTTP] {}
+2023-05-19 22:11:39:770 [HTTP] No route found for /status
+2023-05-19 22:11:39:771 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:39:771 [HTTP] 
+2023-05-19 22:11:40:095 [HTTP] --> GET /status
+2023-05-19 22:11:40:095 [HTTP] {}
+2023-05-19 22:11:40:096 [HTTP] No route found for /status
+2023-05-19 22:11:40:096 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:40:096 [HTTP] 
+2023-05-19 22:11:40:422 [HTTP] --> GET /status
+2023-05-19 22:11:40:422 [HTTP] {}
+2023-05-19 22:11:40:423 [HTTP] No route found for /status
+2023-05-19 22:11:40:423 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:40:423 [HTTP] 
+2023-05-19 22:11:40:749 [HTTP] --> GET /status
+2023-05-19 22:11:40:750 [HTTP] {}
+2023-05-19 22:11:40:750 [HTTP] No route found for /status
+2023-05-19 22:11:40:750 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:40:750 [HTTP] 
+2023-05-19 22:11:41:075 [HTTP] --> GET /status
+2023-05-19 22:11:41:075 [HTTP] {}
+2023-05-19 22:11:41:075 [HTTP] No route found for /status
+2023-05-19 22:11:41:076 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:41:076 [HTTP] 
+2023-05-19 22:11:41:400 [HTTP] --> GET /status
+2023-05-19 22:11:41:400 [HTTP] {}
+2023-05-19 22:11:41:400 [HTTP] No route found for /status
+2023-05-19 22:11:41:401 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:41:401 [HTTP] 
+2023-05-19 22:11:41:724 [HTTP] --> GET /status
+2023-05-19 22:11:41:724 [HTTP] {}
+2023-05-19 22:11:41:724 [HTTP] No route found for /status
+2023-05-19 22:11:41:725 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:41:725 [HTTP] 
+2023-05-19 22:11:42:050 [HTTP] --> GET /status
+2023-05-19 22:11:42:050 [HTTP] {}
+2023-05-19 22:11:42:050 [HTTP] No route found for /status
+2023-05-19 22:11:42:051 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:42:051 [HTTP] 
+2023-05-19 22:11:42:375 [HTTP] --> GET /status
+2023-05-19 22:11:42:375 [HTTP] {}
+2023-05-19 22:11:42:375 [HTTP] No route found for /status
+2023-05-19 22:11:42:376 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:42:376 [HTTP] 
+2023-05-19 22:11:42:702 [HTTP] --> GET /status
+2023-05-19 22:11:42:702 [HTTP] {}
+2023-05-19 22:11:42:702 [HTTP] No route found for /status
+2023-05-19 22:11:42:703 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:42:703 [HTTP] 
+2023-05-19 22:11:43:029 [HTTP] --> GET /status
+2023-05-19 22:11:43:029 [HTTP] {}
+2023-05-19 22:11:43:029 [HTTP] No route found for /status
+2023-05-19 22:11:43:030 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:43:030 [HTTP] 
+2023-05-19 22:11:43:356 [HTTP] --> GET /status
+2023-05-19 22:11:43:356 [HTTP] {}
+2023-05-19 22:11:43:357 [HTTP] No route found for /status
+2023-05-19 22:11:43:357 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:43:357 [HTTP] 
+2023-05-19 22:11:43:682 [HTTP] --> GET /status
+2023-05-19 22:11:43:682 [HTTP] {}
+2023-05-19 22:11:43:683 [HTTP] No route found for /status
+2023-05-19 22:11:43:683 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:43:683 [HTTP] 
+2023-05-19 22:11:44:006 [HTTP] --> GET /status
+2023-05-19 22:11:44:006 [HTTP] {}
+2023-05-19 22:11:44:007 [HTTP] No route found for /status
+2023-05-19 22:11:44:007 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:44:007 [HTTP] 
+2023-05-19 22:11:44:333 [HTTP] --> GET /status
+2023-05-19 22:11:44:333 [HTTP] {}
+2023-05-19 22:11:44:333 [HTTP] No route found for /status
+2023-05-19 22:11:44:334 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:44:334 [HTTP] 
+2023-05-19 22:11:44:658 [HTTP] --> GET /status
+2023-05-19 22:11:44:658 [HTTP] {}
+2023-05-19 22:11:44:658 [HTTP] No route found for /status
+2023-05-19 22:11:44:659 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:44:659 [HTTP] 
+2023-05-19 22:11:44:983 [HTTP] --> GET /status
+2023-05-19 22:11:44:983 [HTTP] {}
+2023-05-19 22:11:44:984 [HTTP] No route found for /status
+2023-05-19 22:11:44:984 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:44:984 [HTTP] 
+2023-05-19 22:11:45:306 [HTTP] --> GET /status
+2023-05-19 22:11:45:306 [HTTP] {}
+2023-05-19 22:11:45:307 [HTTP] No route found for /status
+2023-05-19 22:11:45:307 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:45:307 [HTTP] 
+2023-05-19 22:11:45:633 [HTTP] --> GET /status
+2023-05-19 22:11:45:633 [HTTP] {}
+2023-05-19 22:11:45:634 [HTTP] No route found for /status
+2023-05-19 22:11:45:634 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:45:634 [HTTP] 
+2023-05-19 22:11:45:961 [HTTP] --> GET /status
+2023-05-19 22:11:45:961 [HTTP] {}
+2023-05-19 22:11:45:961 [HTTP] No route found for /status
+2023-05-19 22:11:45:962 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:45:962 [HTTP] 
+2023-05-19 22:11:46:284 [HTTP] --> GET /status
+2023-05-19 22:11:46:284 [HTTP] {}
+2023-05-19 22:11:46:284 [HTTP] No route found for /status
+2023-05-19 22:11:46:285 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:46:285 [HTTP] 
+2023-05-19 22:11:46:610 [HTTP] --> GET /status
+2023-05-19 22:11:46:610 [HTTP] {}
+2023-05-19 22:11:46:610 [HTTP] No route found for /status
+2023-05-19 22:11:46:611 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:46:611 [HTTP] 
+2023-05-19 22:11:46:933 [HTTP] --> GET /status
+2023-05-19 22:11:46:933 [HTTP] {}
+2023-05-19 22:11:46:934 [HTTP] No route found for /status
+2023-05-19 22:11:46:934 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:46:934 [HTTP] 
+2023-05-19 22:11:47:257 [HTTP] --> GET /status
+2023-05-19 22:11:47:258 [HTTP] {}
+2023-05-19 22:11:47:258 [HTTP] No route found for /status
+2023-05-19 22:11:47:258 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:47:259 [HTTP] 
+2023-05-19 22:11:47:585 [HTTP] --> GET /status
+2023-05-19 22:11:47:585 [HTTP] {}
+2023-05-19 22:11:47:586 [HTTP] No route found for /status
+2023-05-19 22:11:47:586 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:47:586 [HTTP] 
+2023-05-19 22:11:47:912 [HTTP] --> GET /status
+2023-05-19 22:11:47:912 [HTTP] {}
+2023-05-19 22:11:47:912 [HTTP] No route found for /status
+2023-05-19 22:11:47:913 [HTTP] <-- GET /status 404 1 ms - 211
+2023-05-19 22:11:47:913 [HTTP] 
+2023-05-19 22:11:47:972 [Appium] Received SIGTERM - shutting down
+2023-05-19 22:11:47:973 [Appium] There are no active sessions for cleanup
+2023-05-19 22:11:47:976 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:907:11)
+    at Socket._write (node:net:919:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:280:11)
+2023-05-19 22:11:47:977 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:907:11)
+    at Socket._write (node:net:919:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:280:11)
+2023-05-19 22:11:47:978 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:907:11)
+    at Socket._write (node:net:919:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:280:11)
+2023-05-19 22:11:47:980 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:907:11)
+    at Socket._write (node:net:919:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:280:11)
+2023-05-19 22:11:47:981 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:907:11)
+    at Socket._write (node:net:919:8)
+    at writeOrBuffer (node:internal/streams/writable:392:12)
+    at _write (node:internal/streams/writable:333:10)
+    at Socket.Writable.write (node:internal/streams/writable:337:10)
+    at Console.log (/usr/local/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/appium/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:525:35)
+    at addChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:280:11)
