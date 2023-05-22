@@ -7,3 +7,8 @@
 ---
 
 - [Micronaut Maven Plugin documentation](https://micronaut-projects.github.io/micronaut-maven-plugin/latest/)
+
+
+**Command to start the Appium service:**
+
+`appium server --allow-cors`

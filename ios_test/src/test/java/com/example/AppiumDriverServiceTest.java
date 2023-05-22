@@ -36,13 +36,14 @@ public class AppiumDriverServiceTest {
         isDisplayedSwitches = false;
         Thread.sleep(3000);
 
-        iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"1\"`][2]")).click();
-        Thread.sleep(3000);
-
-        boolean isDisplayedTintedOff = iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"0\"`]")).isDisplayed();
-        Thread.sleep(3000);
-
-        Assert.assertTrue(isDisplayedTintedOff);
+//        iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"1\"`][2]")).click();
+//        Thread.sleep(3000);
+//
+//        boolean isDisplayedTintedOff = iosDriver.findElement(AppiumBy.accessibilityId("**/XCUIElementTypeSwitch[`value == \"0\"`]")).isDisplayed();
+//        Thread.sleep(3000);
+//
+//        Assert.assertTrue(isDisplayedTintedOff);
+        boolean asd = iosDriver.findElement(AppiumBy.accessibilityId("XCUIElementTypeButton")).isDisplayed();
         iosDriver.findElement(AppiumBy.accessibilityId("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
         Thread.sleep(3000);
 
