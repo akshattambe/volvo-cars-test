@@ -21,6 +21,8 @@ public final class AppiumDriverService {
     private static AppiumDriverService appiumDriverService;
 
     private AppiumDriver appiumDriver;
+
+    private IOSDriver iosDriver;
     private AppiumDriverService(){
 
     }
@@ -34,13 +36,12 @@ public final class AppiumDriverService {
 
     public IOSDriver initDriver(){
         String appiumServerPath = "/usr/local/bin/node_modules/appium";
-        String appiumServerURLStr = "http://localhost:4723/wd/hub";
+//        String appiumServerURLStr = "http://localhost:4723/wd/hub";
+        String appiumServerURLStr = "http://0.0.0.0:4723/";
 
-        startAppiumService(appiumServerPath);
+//        startAppiumService(appiumServerPath);
         DesiredCapabilities desiredCapabilities = setDesiredCapabilities();
-        IOSDriver iosDriver = startDriver(appiumServerURLStr, desiredCapabilities);
-
-        return iosDriver;
+        return startDriver(appiumServerURLStr, desiredCapabilities);
     }
 
     AppiumDriverLocalService appiumDriverLocalService;
@@ -48,9 +49,9 @@ public final class AppiumDriverService {
 
     /**
      * Start Appium service first.
-     * @param appiumServerPath
+     * @param
      */
-    public void startAppiumService(String appiumServerPath){
+    public AppiumDriverLocalService startAppiumService(){
 //        AppiumDriverLocalService appiumService =  AppiumDriverLocalService.buildService(
 //                new AppiumServiceBuilder().usingDriverExecutable(new File(appiumServerPath)));
 //        appiumService.start();
@@ -70,15 +71,17 @@ public final class AppiumDriverService {
 //                        .usingAnyFreePort()); // usingPort(4723)
 //        appiumDriverLocalService.start();
 
-        appiumDriverLocalService =
-                new AppiumServiceBuilder()
-                .usingDriverExecutable(new File("/usr/local/bin/node"))
-                .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-                .withIPAddress("127.0.0.1")
-                .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-                .usingPort(4723)
-                .build();
-        appiumDriverLocalService.clearOutPutStreams();
+//        appiumDriverLocalService =
+//                new AppiumServiceBuilder()
+//                .usingDriverExecutable(new File("/usr/local/bin/node"))
+//                .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
+//                .withIPAddress("127.0.0.1")
+//                .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
+//                .usingPort(4723)
+//                .build();
+//        appiumDriverLocalService.clearOutPutStreams();
+        appiumDriverLocalService = AppiumDriverLocalService.buildDefaultService();
+
         appiumDriverLocalService.start();
 
 //        AppiumDriverLocalService
@@ -93,6 +96,7 @@ public final class AppiumDriverService {
         // Print the Appium server URL
         String appiumServerUrl = appiumDriverLocalService.getUrl().toString();
         System.out.println("Appium Server started: " + appiumServerUrl);
+        return appiumDriverLocalService;
     }
 
     /**
@@ -108,8 +112,16 @@ public final class AppiumDriverService {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        assert appiumServerURL != null;
-        return new IOSDriver(appiumServerURL, desiredCapabilities);
+
+//        try {
+//            iosDriver = new IOSDriver(appiumServerURL, desiredCapabilities);
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//            throw new RuntimeException(e);
+//        }
+
+        iosDriver = new IOSDriver(appiumServerURL, desiredCapabilities);
+        return iosDriver;
     }
 
     /**
@@ -120,7 +132,6 @@ public final class AppiumDriverService {
         if (iosDriver != null) {
             iosDriver.quit();
         }
-
     }
 
     /**
@@ -128,15 +139,18 @@ public final class AppiumDriverService {
      * @param appiumDriverLocalService
      */
     public void stopAppiumService(AppiumDriverLocalService appiumDriverLocalService){
-        appiumDriverLocalService.stop();
+        if (appiumDriverLocalService.isRunning()) {
+            appiumDriverLocalService.stop();
+            System.out.println(Boolean.toString(appiumDriverLocalService.isRunning()));
+        }
     }
 
     private DesiredCapabilities setDesiredCapabilities(){
         // Set the desired capabilities
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "16.4.1");
-        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Xcode simulator");
+        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "16.4");
+        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 12");
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         // Set the path to the app file (.app or .ipa)
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "/Users/akshat.tambe/Downloads/UIKitCatalog.app");
