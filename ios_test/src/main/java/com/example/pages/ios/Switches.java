@@ -2,20 +2,25 @@ package com.example.pages.ios;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import jakarta.inject.Inject;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
 
 public class Switches   {
-    private IOSDriver driver;
-
+    private final IOSDriver driver;
     @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeSwitch[`value == \"1\"`][2]")
     private WebElement tintOn;
 
     @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeSwitch[`value == \"0\"`]")
     private WebElement tintOff;
 
+    /**
+     * Constructor for Switches.
+     * @param driver
+     */
+    @Inject
     public Switches(IOSDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

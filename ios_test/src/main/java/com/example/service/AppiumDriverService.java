@@ -3,30 +3,32 @@ package com.example.service;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.micronaut.context.annotation.Factory;
 import jakarta.inject.Singleton;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 
-
-@Singleton
-public final class AppiumDriverService {
-    private static AppiumDriverService appiumDriverService;
+@Factory
+public class AppiumDriverService implements IAppiumDriverProvider {
+    AppiumDriverService appiumDriverService;
     AppiumDriverLocalService appiumDriverLocalService;
 
     private IOSDriver iosDriver;
-    private AppiumDriverService(){
+    public AppiumDriverService(){
 
     }
 
-    public static AppiumDriverService getAppiumDriverServiceInstance(){
+    @Override
+    public AppiumDriverService getAppiumDriverServiceInstance(){
         if(appiumDriverService == null) {
             appiumDriverService = new AppiumDriverService();
         }
         return appiumDriverService;
     }
 
+    @Override
     public IOSDriver initDriver(){
         String appiumServerURLStr = "http://0.0.0.0:4723/";
 
@@ -38,6 +40,7 @@ public final class AppiumDriverService {
      * Start Appium service first.
      * @param
      */
+    @Override
     public AppiumDriverLocalService startAppiumService(){
         appiumDriverLocalService = AppiumDriverLocalService.buildDefaultService();
 
@@ -71,6 +74,7 @@ public final class AppiumDriverService {
      * Stop the driver before stopping Appium Service.
      * @param iosDriver
      */
+    @Override
     public void quitDriver(IOSDriver iosDriver){
         if (iosDriver != null) {
             iosDriver.quit();
@@ -81,6 +85,7 @@ public final class AppiumDriverService {
      * Stop Appium Service after quiting the driver.
      * @param appiumDriverLocalService
      */
+    @Override
     public void stopAppiumService(AppiumDriverLocalService appiumDriverLocalService){
         if (appiumDriverLocalService.isRunning()) {
             appiumDriverLocalService.stop();

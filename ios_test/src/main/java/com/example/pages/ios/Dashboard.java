@@ -2,13 +2,14 @@ package com.example.pages.ios;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import jakarta.inject.Inject;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
 
 public class Dashboard {
-    private IOSDriver driver;
+    private final IOSDriver driver;
 
     /**
      * Locators
@@ -26,10 +27,11 @@ public class Dashboard {
     private WebElement pickerView;
 
     /**
-     * Constructor
+     * Constructor for Dashboard.
      *
      * @param driver
      */
+    @Inject
     public Dashboard(IOSDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(1)), this);

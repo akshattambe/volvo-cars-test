@@ -5,11 +5,15 @@ import com.example.service.AppiumDriverService;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import jakarta.inject.Inject;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
 
+@MicronautTest
 public class AppiumDriverServiceTest {
     private AppiumDriverService appiumDriverService;
+    @Inject
     private IOSDriver iosDriver;
     private AppiumDriverLocalService appiumDriverLocalService;
     private Dashboard dashboard;
@@ -21,7 +25,7 @@ public class AppiumDriverServiceTest {
 
     @Before
     public void setup(){
-        appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
+        appiumDriverService = new AppiumDriverService().getAppiumDriverServiceInstance();
 //        appiumDriverLocalService = appiumDriverService.startAppiumService();
 
         iosDriver = appiumDriverService.initDriver();
