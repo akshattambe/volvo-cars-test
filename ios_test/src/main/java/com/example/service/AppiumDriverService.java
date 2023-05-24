@@ -1,26 +1,19 @@
 package com.example.service;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
-import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import jakarta.inject.Singleton;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-//import static jdk.internal.logger.LoggerFinderLoader.service;
+
 
 @Singleton
 public final class AppiumDriverService {
-
     private static AppiumDriverService appiumDriverService;
-
-    private AppiumDriver appiumDriver;
+    AppiumDriverLocalService appiumDriverLocalService;
 
     private IOSDriver iosDriver;
     private AppiumDriverService(){
@@ -35,63 +28,20 @@ public final class AppiumDriverService {
     }
 
     public IOSDriver initDriver(){
-        String appiumServerPath = "/usr/local/bin/node_modules/appium";
-//        String appiumServerURLStr = "http://localhost:4723/wd/hub";
         String appiumServerURLStr = "http://0.0.0.0:4723/";
 
-//        startAppiumService(appiumServerPath);
         DesiredCapabilities desiredCapabilities = setDesiredCapabilities();
         return startDriver(appiumServerURLStr, desiredCapabilities);
     }
-
-    AppiumDriverLocalService appiumDriverLocalService;
-    AppiumServiceBuilder appiumServiceBuilder;
 
     /**
      * Start Appium service first.
      * @param
      */
     public AppiumDriverLocalService startAppiumService(){
-//        AppiumDriverLocalService appiumService =  AppiumDriverLocalService.buildService(
-//                new AppiumServiceBuilder().usingDriverExecutable(new File(appiumServerPath)));
-//        appiumService.start();
-//
-//        appiumServiceBuilder = new AppiumServiceBuilder()
-//                .usingAnyFreePort()
-//                .withArgument(GeneralServerFlag.SESSION_OVERRIDE)
-//                .withArgument(GeneralServerFlag.LOG_LEVEL, "error");
-//        appiumDriverLocalService = appiumServiceBuilder.build();
-//        appiumDriverLocalService.start();
-
-//        appiumDriverLocalService =  AppiumDriverLocalService
-//                .buildService(new AppiumServiceBuilder()
-//                        .usingDriverExecutable(new File("/usr/local/bin/node"))
-//                        .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-//                        .withIPAddress("127.0.0.1")
-//                        .usingAnyFreePort()); // usingPort(4723)
-//        appiumDriverLocalService.start();
-
-//        appiumDriverLocalService =
-//                new AppiumServiceBuilder()
-//                .usingDriverExecutable(new File("/usr/local/bin/node"))
-//                .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-//                .withIPAddress("127.0.0.1")
-//                .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-//                .usingPort(4723)
-//                .build();
-//        appiumDriverLocalService.clearOutPutStreams();
         appiumDriverLocalService = AppiumDriverLocalService.buildDefaultService();
 
         appiumDriverLocalService.start();
-
-//        AppiumDriverLocalService
-//                .buildService(new AppiumServiceBuilder()
-//                        .usingDriverExecutable(new File("/usr/local/bin/node"))
-//                        .withAppiumJS(
-//                                new File(
-//                                        “/usr/local/lib/node_modules/appium/build/lib/main.js”))
-//                .withIPAddress(“127.0.0.1”).usingPort(4723));
-//        service.start();
 
         // Print the Appium server URL
         String appiumServerUrl = appiumDriverLocalService.getUrl().toString();
@@ -112,13 +62,6 @@ public final class AppiumDriverService {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
-//        try {
-//            iosDriver = new IOSDriver(appiumServerURL, desiredCapabilities);
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//            throw new RuntimeException(e);
-//        }
 
         iosDriver = new IOSDriver(appiumServerURL, desiredCapabilities);
         return iosDriver;
