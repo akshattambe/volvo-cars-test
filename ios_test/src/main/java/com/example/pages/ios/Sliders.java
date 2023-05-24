@@ -12,11 +12,13 @@ public class Sliders {
 
     private IOSDriver driver;
 
+    private final String XPATH = "//XCUIElementTypeApplication[@name=\"UIKitCatalog\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeSlider";
+
     /**
      * Locators
      */
-    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeButton[`label == \"Increment\"`][2]")
-    private WebElement btn_addTint;
+    @iOSXCUITFindBy(xpath = XPATH)
+    private WebElement tintedSlider;
 
 
     /**
@@ -27,4 +29,23 @@ public class Sliders {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(1)), this);
     }
+
+    public boolean tintedSliderIsDisplayed() {
+        return tintedSlider.isDisplayed();
+    }
+
+    /**
+     * Slides the slider to the value specified.
+     * @param value - the value to slide between 0 and 1 e.g. 0.8 = 80%, 1= 100%
+     */
+    public void slideTintedSliderToEnd(float value) {
+        if (value > 1 || value < 0) {
+            throw new IllegalArgumentException("Value must be between 0 and 1");
+        }
+        String slideValue = Float.toString(value);
+        tintedSlider.sendKeys(slideValue);
+    }
+
+    public String getAttributeTintedSliderValue() { return tintedSlider.getAttribute("value");}
+
 }

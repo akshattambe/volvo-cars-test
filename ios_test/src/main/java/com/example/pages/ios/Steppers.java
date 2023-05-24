@@ -38,7 +38,7 @@ public class Steppers {
             btn_addTint.click();
             //Check the value of TINTED.
             if(!(currentTintValue(i).equalsIgnoreCase(Integer.toString(i)))){
-                System.out.println("the curent TINT value is :" + currentTintValue(i) + ", whereas the times value is : " + i );
+                System.out.println("the current TINT value is :" + currentTintValue(i) + ", whereas the times value is : " + i );
                 throw new IllegalStateException("TINTED value is not correct");
             }
         }

@@ -73,87 +73,63 @@ public class AppiumDriverServiceTest {
          * Click on + in the TINTED until value will be 10.
          */
         steppers.addTintForTimes(10);
-//        for (int i = 1; i <= 10; i++) {
-//            // Perform actions for each iteration
-//            iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeButton[`label == \"Increment\"`][2]")).click();
-//            //Check the value of TINTED.
-//            Assert.assertTrue(iosDriver.findElement(AppiumBy.accessibilityId(Integer.toString(i))).getText().equalsIgnoreCase(Integer.toString(i)));
-//        }
 
         /**
          * Click on UiKitCatalog back button.
          */
         Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
-//        iosDriver.findElement(AppiumBy.accessibilityId("Steppers")).click();
 
-//        /**
-//         * Click on + in the TINTED until value will be 10.
-//         */
-//
-//        for (int i = 1; i <= 10; i++) {
-//            // Perform actions for each iteration
-//            iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeButton[`label == \"Increment\"`][2]")).click();
-//            //Check the value of TINTED.
-//            Assert.assertTrue(iosDriver.findElement(AppiumBy.accessibilityId(Integer.toString(i))).getText().equalsIgnoreCase(Integer.toString(i)));
-//        }
-//
-//        /**
-//         * Click on UiKitCatalog back button.
-//         */
-//        backButton = iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).isDisplayed();
-//        Assert.assertTrue(backButton);
-//        iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
-//        Thread.sleep(1000);
-//
-//        /**
-//         * 3. Click on Sliders.
-//         */
-//        iosDriver.findElement(AppiumBy.accessibilityId("Sliders")).click();
-//
-//        /**
-//         * Change the TINTED slider to the Maximum.
-//         */
-//        String xpath = "//XCUIElementTypeApplication[@name=\"UIKitCatalog\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeSlider";
-//        WebElement slider = iosDriver.findElement(AppiumBy.xpath(xpath));
-//        slider.sendKeys("1");
-//
-//        /**
-//         * Click on UiKitCatalog back button.
-//         */
-//        backButton = iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).isDisplayed();
-//        Assert.assertTrue(backButton);
-//        iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
-//        Thread.sleep(1000);
-//
-//        /**
-//         * 4. Click on Picker View.
-//         */
-//        iosDriver.findElement(AppiumBy.accessibilityId("Picker View")).click();
-//
-//        /**
-//         * Set Picker Views -> Select 80 200 100.
-//         */
-//        WebElement red = iosDriver.findElement(AppiumBy.accessibilityId("Red color component value"));
-//        Assert.assertTrue(red.isDisplayed());
-//        red.sendKeys("80");
-//        Assert.assertTrue(red.getText().equalsIgnoreCase("80"));
-//        WebElement green = iosDriver.findElement(AppiumBy.accessibilityId("Green color component value"));
-//        Assert.assertTrue(green.isDisplayed());
-//        green.sendKeys("200");
-//        Assert.assertTrue(green.getText().equalsIgnoreCase("200"));
-//        WebElement blue = iosDriver.findElement(AppiumBy.accessibilityId("Blue color component value"));
-//        Assert.assertTrue(blue.isDisplayed());
-//        blue.sendKeys("100");
-//        Assert.assertTrue(blue.getText().equalsIgnoreCase("100"));
-//
-//
-//        /**
-//         * Click on UiKitCatalog back button.
-//         */
-//        backButton = iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).isDisplayed();
-//        Assert.assertTrue(backButton);
-//        iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
+        /**
+         * 3. Click on Sliders.
+         */
+        Assert.assertTrue("Steppers is not displayed on the screen.", dashboard.isSlidersDisplayed());
+        dashboard.clickOnSliders();
+
+        /**
+         * Move the TINTED slider to 100%.
+         */
+        Assert.assertTrue(sliders.tintedSliderIsDisplayed());
+        String initialSliderValue = sliders.getAttributeTintedSliderValue();
+        sliders.slideTintedSliderToEnd(1);
+        String finalSliderValue = sliders.getAttributeTintedSliderValue();
+        Assert.assertNotEquals(initialSliderValue, finalSliderValue);
+        Assert.assertEquals(finalSliderValue, "100 %");
+
+
+        /**
+         * Click on UiKitCatalog back button.
+         */
+        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        uiCatalogHeader.clickBackToDashboard();
+
+        /**
+         * 4. Click on Picker View.
+         */
+        Assert.assertTrue(dashboard.isPickerViewDisplayed());
+        dashboard.clickOnPickerView();
+
+        /**
+         * Set Picker Views -> Select 80 200 100.
+         */
+        Assert.assertTrue(pickerView.isRedWheelDisplayed());
+        Assert.assertTrue(pickerView.isGreenWheelDisplayed());
+        Assert.assertTrue(pickerView.isBlueWheelDisplayed());
+
+        pickerView.sendKeysToRedWheel(80);
+        Assert.assertEquals(80,pickerView.getRedWheelValue());
+
+        pickerView.sendKeysToGreenWheel(200);
+        Assert.assertEquals(200,pickerView.getGreenWheelValue());
+
+        pickerView.sendKeysToBlueWheel(100);
+        Assert.assertEquals(100,pickerView.getBlueWheelValue());
+
+        /**
+         * Click on UiKitCatalog back button.
+         */
+        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        uiCatalogHeader.clickBackToDashboard();
 //
 //        /**
 //         * Put application in the Background ,Open Last Message in the Mobile / Simulator and then open application again.
