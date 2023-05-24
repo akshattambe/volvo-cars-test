@@ -30,6 +30,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-validation</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>io.appium</groupId>
       <artifactId>java-client</artifactId>
       <version>8.5.0</version>

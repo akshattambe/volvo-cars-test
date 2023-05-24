@@ -5,10 +5,12 @@ import com.example.service.AppiumDriverService;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import jakarta.inject.Inject;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
 
 public class AppiumDriverServiceTest {
+    @Inject
     private AppiumDriverService appiumDriverService;
     private IOSDriver iosDriver;
     private AppiumDriverLocalService appiumDriverLocalService;
