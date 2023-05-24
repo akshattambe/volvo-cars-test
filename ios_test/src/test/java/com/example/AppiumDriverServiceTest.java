@@ -18,7 +18,7 @@ public class AppiumDriverServiceTest {
     @Before
     public void setup(){
         appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
-//        appiumDriverLocalService = appiumDriverService.startAppiumService();
+        appiumDriverLocalService = appiumDriverService.startAppiumService();
         iosDriver = appiumDriverService.initDriver();
     }
 
@@ -26,7 +26,7 @@ public class AppiumDriverServiceTest {
     public void teardown(){
         //Appium Service will continue to run in this case.
         appiumDriverService.quitDriver(iosDriver);
-//        appiumDriverService.stopAppiumService(appiumDriverLocalService);
+        appiumDriverService.stopAppiumService(appiumDriverLocalService);
     }
     @Test
     public void test() throws InterruptedException {
