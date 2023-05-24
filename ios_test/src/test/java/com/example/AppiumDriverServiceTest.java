@@ -1,8 +1,6 @@
 package com.example;
 
-import com.example.pages.ios.Dashboard;
-import com.example.pages.ios.Switches;
-import com.example.pages.ios.UiCatalogHeader;
+import com.example.pages.ios.*;
 import com.example.service.AppiumDriverService;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
@@ -17,15 +15,22 @@ public class AppiumDriverServiceTest {
     private Dashboard dashboard;
     private Switches switches;
     private UiCatalogHeader uiCatalogHeader;
+    private Steppers steppers;
+    private Sliders sliders;
+    private PickerView pickerView;
 
     @Before
     public void setup(){
         appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
 //        appiumDriverLocalService = appiumDriverService.startAppiumService();
+
         iosDriver = appiumDriverService.initDriver();
         dashboard = new Dashboard(iosDriver);
         switches = new Switches(iosDriver);
         uiCatalogHeader = new UiCatalogHeader(iosDriver);
+        steppers = new Steppers(iosDriver);
+        sliders = new Sliders(iosDriver);
+        pickerView = new PickerView(iosDriver);
     }
 
     @After
@@ -52,31 +57,36 @@ public class AppiumDriverServiceTest {
         String finalValue = switches.getAttributeValue_WhenTintOff();
         Assert.assertNotEquals(initialValue, finalValue);
 
-//                WebElement tintOn = iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeSwitch[`value == \"1\"`][2]"));
-//        Assert.assertTrue(tintOn.isDisplayed());
-//
-//        String initialValue = tintOn.getAttribute("value");
-//        tintOn.click();
-//        WebElement tintOff = iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeSwitch[`value == \"0\"`]"));
-//        String finalValue = tintOff.getAttribute("value");
-//        Assert.assertNotEquals(initialValue, finalValue);
-
         /**
          * Click on UiKitCatalog back button.
          */
         Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
 
-//        boolean backButton = iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).isDisplayed();
-//        Assert.assertTrue(backButton);
-//        iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
+        /**
+         * 2. Click on Steppers.
+         */
+        Assert.assertTrue("Steppers is not displayed on the screen.", dashboard.isSteppersDisplayed());
+        dashboard.clickOnSteppers();
 
-//
-//        /**
-//         * 2. Click on Steppers.
-//         */
+        /**
+         * Click on + in the TINTED until value will be 10.
+         */
+        steppers.addTintForTimes(10);
+//        for (int i = 1; i <= 10; i++) {
+//            // Perform actions for each iteration
+//            iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeButton[`label == \"Increment\"`][2]")).click();
+//            //Check the value of TINTED.
+//            Assert.assertTrue(iosDriver.findElement(AppiumBy.accessibilityId(Integer.toString(i))).getText().equalsIgnoreCase(Integer.toString(i)));
+//        }
+
+        /**
+         * Click on UiKitCatalog back button.
+         */
+        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        uiCatalogHeader.clickBackToDashboard();
 //        iosDriver.findElement(AppiumBy.accessibilityId("Steppers")).click();
-//
+
 //        /**
 //         * Click on + in the TINTED until value will be 10.
 //         */
