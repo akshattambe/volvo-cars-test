@@ -1,6 +1,8 @@
 package com.example;
 
 import com.example.pages.ios.Dashboard;
+import com.example.pages.ios.Switches;
+import com.example.pages.ios.UiCatalogHeader;
 import com.example.service.AppiumDriverService;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
@@ -13,6 +15,8 @@ public class AppiumDriverServiceTest {
     private IOSDriver iosDriver;
     private AppiumDriverLocalService appiumDriverLocalService;
     private Dashboard dashboard;
+    private Switches switches;
+    private UiCatalogHeader uiCatalogHeader;
 
     @Before
     public void setup(){
@@ -20,6 +24,8 @@ public class AppiumDriverServiceTest {
 //        appiumDriverLocalService = appiumDriverService.startAppiumService();
         iosDriver = appiumDriverService.initDriver();
         dashboard = new Dashboard(iosDriver);
+        switches = new Switches(iosDriver);
+        uiCatalogHeader = new UiCatalogHeader(iosDriver);
     }
 
     @After
@@ -39,21 +45,31 @@ public class AppiumDriverServiceTest {
         /**
          * change TINTED to OFF.
          */
-        WebElement tintOn = iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeSwitch[`value == \"1\"`][2]"));
-        Assert.assertTrue(tintOn.isDisplayed());
-
-        String initialValue = tintOn.getAttribute("value");
-        tintOn.click();
-        WebElement tintOff = iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeSwitch[`value == \"0\"`]"));
-        String finalValue = tintOff.getAttribute("value");
+        Assert.assertTrue(switches.isTintOnDisplayed());
+        String initialValue = switches.getAttributeValue_WhenTintOn();
+        switches.click_ToggleTintToOff();
+        Assert.assertTrue(switches.isTintOffDisplayed());
+        String finalValue = switches.getAttributeValue_WhenTintOff();
         Assert.assertNotEquals(initialValue, finalValue);
+
+//                WebElement tintOn = iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeSwitch[`value == \"1\"`][2]"));
+//        Assert.assertTrue(tintOn.isDisplayed());
+//
+//        String initialValue = tintOn.getAttribute("value");
+//        tintOn.click();
+//        WebElement tintOff = iosDriver.findElement(AppiumBy.iOSClassChain("**/XCUIElementTypeSwitch[`value == \"0\"`]"));
+//        String finalValue = tintOff.getAttribute("value");
+//        Assert.assertNotEquals(initialValue, finalValue);
 
         /**
          * Click on UiKitCatalog back button.
          */
-        boolean backButton = iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).isDisplayed();
-        Assert.assertTrue(backButton);
-        iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
+        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        uiCatalogHeader.clickBackToDashboard();
+
+//        boolean backButton = iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).isDisplayed();
+//        Assert.assertTrue(backButton);
+//        iosDriver.findElement(AppiumBy.className("XCUIElementTypeButton")).click(); //click UiKitCatalog back button.
 
 //
 //        /**

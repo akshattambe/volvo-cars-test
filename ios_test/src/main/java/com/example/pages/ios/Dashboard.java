@@ -16,6 +16,10 @@ public class Dashboard{
     @iOSXCUITFindBy(accessibility = "Switches")
     private WebElement switches;
 
+    /**
+     * Constructor
+     * @param driver
+     */
     public Dashboard(IOSDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(1)), this);
