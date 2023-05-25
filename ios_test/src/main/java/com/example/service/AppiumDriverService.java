@@ -3,21 +3,17 @@ package com.example.service;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import jakarta.inject.Singleton;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 
-
-@Singleton
 public final class AppiumDriverService {
     private static AppiumDriverService appiumDriverService;
     AppiumDriverLocalService appiumDriverLocalService;
 
     private IOSDriver iosDriver;
     private AppiumDriverService(){
-
     }
 
     public static AppiumDriverService getAppiumDriverServiceInstance(){
@@ -27,10 +23,10 @@ public final class AppiumDriverService {
         return appiumDriverService;
     }
 
-    public IOSDriver initDriver(){
+    public IOSDriver initDriver(String device){
         String appiumServerURLStr = "http://0.0.0.0:4723/";
 
-        DesiredCapabilities desiredCapabilities = setDesiredCapabilities();
+        DesiredCapabilities desiredCapabilities = setDesiredCapabilities(device);
         return startDriver(appiumServerURLStr, desiredCapabilities);
     }
 
@@ -88,12 +84,12 @@ public final class AppiumDriverService {
         }
     }
 
-    private DesiredCapabilities setDesiredCapabilities(){
+    private DesiredCapabilities setDesiredCapabilities(String device){
         // Set the desired capabilities
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "16.4");
-        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 12");
+        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         // Set the path to the app file (.app or .ipa)
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "/Users/akshat.tambe/Downloads/UIKitCatalog.app");

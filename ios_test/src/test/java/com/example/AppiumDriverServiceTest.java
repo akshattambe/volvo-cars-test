@@ -2,12 +2,16 @@ package com.example;
 
 import com.example.pages.ios.*;
 import com.example.service.AppiumDriverService;
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import org.junit.*;
-import org.openqa.selenium.WebElement;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AppiumDriverServiceTest {
     private AppiumDriverService appiumDriverService;
     private IOSDriver iosDriver;
@@ -19,12 +23,15 @@ public class AppiumDriverServiceTest {
     private Sliders sliders;
     private PickerView pickerView;
 
-    @Before
+    @BeforeAll
     public void setup(){
+        String device = System.getProperty("appium.ios.device", "iPhone 12");
+        System.out.println("device: " + device);
+
         appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
 //        appiumDriverLocalService = appiumDriverService.startAppiumService();
 
-        iosDriver = appiumDriverService.initDriver();
+        iosDriver = appiumDriverService.initDriver(device);
         dashboard = new Dashboard(iosDriver);
         switches = new Switches(iosDriver);
         uiCatalogHeader = new UiCatalogHeader(iosDriver);
@@ -33,7 +40,7 @@ public class AppiumDriverServiceTest {
         pickerView = new PickerView(iosDriver);
     }
 
-    @After
+    @AfterAll
     public void teardown(){
         //Appium Service will continue to run in this case.
         appiumDriverService.quitDriver(iosDriver);
@@ -44,29 +51,29 @@ public class AppiumDriverServiceTest {
         /**
          * 1. Click on Switches
          */
-        Assert.assertTrue("Switch is not displayed on the screen.", dashboard.isSwitchesDisplayed());
+        assertTrue(dashboard.isSwitchesDisplayed(), "Switch is not displayed on the screen.");
         dashboard.clickOnSwitches();
 
         /**
          * change TINTED to OFF.
          */
-        Assert.assertTrue(switches.isTintOnDisplayed());
+        assertTrue(switches.isTintOnDisplayed());
         String initialValue = switches.getAttributeValue_WhenTintOn();
         switches.click_ToggleTintToOff();
-        Assert.assertTrue(switches.isTintOffDisplayed());
+        assertTrue(switches.isTintOffDisplayed());
         String finalValue = switches.getAttributeValue_WhenTintOff();
-        Assert.assertNotEquals(initialValue, finalValue);
+        assertNotEquals(initialValue, finalValue);
 
         /**
          * Click on UiKitCatalog back button.
          */
-        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
 
         /**
          * 2. Click on Steppers.
          */
-        Assert.assertTrue("Steppers is not displayed on the screen.", dashboard.isSteppersDisplayed());
+        assertTrue(dashboard.isSteppersDisplayed(), "Steppers is not displayed on the screen.");
         dashboard.clickOnSteppers();
 
         /**
@@ -77,58 +84,58 @@ public class AppiumDriverServiceTest {
         /**
          * Click on UiKitCatalog back button.
          */
-        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
 
         /**
          * 3. Click on Sliders.
          */
-        Assert.assertTrue("Steppers is not displayed on the screen.", dashboard.isSlidersDisplayed());
+        assertTrue(dashboard.isSlidersDisplayed(),"Steppers is not displayed on the screen.");
         dashboard.clickOnSliders();
 
         /**
          * Move the TINTED slider to 100%.
          */
-        Assert.assertTrue(sliders.tintedSliderIsDisplayed());
+        assertTrue(sliders.tintedSliderIsDisplayed());
         String initialSliderValue = sliders.getAttributeTintedSliderValue();
         sliders.slideTintedSliderToEnd(1);
         String finalSliderValue = sliders.getAttributeTintedSliderValue();
-        Assert.assertNotEquals(initialSliderValue, finalSliderValue);
-        Assert.assertEquals(finalSliderValue, "100 %");
+        assertNotEquals(initialSliderValue, finalSliderValue);
+        assertEquals(finalSliderValue, "100 %");
 
 
         /**
          * Click on UiKitCatalog back button.
          */
-        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
 
         /**
          * 4. Click on Picker View.
          */
-        Assert.assertTrue(dashboard.isPickerViewDisplayed());
+        assertTrue(dashboard.isPickerViewDisplayed());
         dashboard.clickOnPickerView();
 
         /**
          * Set Picker Views -> Select 80 200 100.
          */
-        Assert.assertTrue(pickerView.isRedWheelDisplayed());
-        Assert.assertTrue(pickerView.isGreenWheelDisplayed());
-        Assert.assertTrue(pickerView.isBlueWheelDisplayed());
+        assertTrue(pickerView.isRedWheelDisplayed());
+        assertTrue(pickerView.isGreenWheelDisplayed());
+        assertTrue(pickerView.isBlueWheelDisplayed());
 
         pickerView.sendKeysToRedWheel(80);
-        Assert.assertEquals(80,pickerView.getRedWheelValue());
+        assertEquals(80,pickerView.getRedWheelValue());
 
         pickerView.sendKeysToGreenWheel(200);
-        Assert.assertEquals(200,pickerView.getGreenWheelValue());
+        assertEquals(200,pickerView.getGreenWheelValue());
 
         pickerView.sendKeysToBlueWheel(100);
-        Assert.assertEquals(100,pickerView.getBlueWheelValue());
+        assertEquals(100,pickerView.getBlueWheelValue());
 
         /**
          * Click on UiKitCatalog back button.
          */
-        Assert.assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
+        assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
 //
 //        /**
