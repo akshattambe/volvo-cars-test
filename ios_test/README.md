@@ -49,6 +49,10 @@ However, if you wish to run the project from IntelliJ CE, you will need to do fo
 1. Install `JVM Arguments Setter` plugging from IntelliJ marketplace.
 2. Add `--add-opens java.base/java.lang=ALL-UNNAMED` to JVM arguments as shown in the screenshot.
 3. Go to Edit Configuration and set the values as shown in the screenshot.
+4. set `-cp` to `ios_test`
+5. set the command param to `-ea -Dappium.ios.appPath="<path-to-UIKitCatalog.app>"`
+6. And JDK 17 SDK of `ios_test` module.
+7. Click Apply and OK.
 
 ...
 
