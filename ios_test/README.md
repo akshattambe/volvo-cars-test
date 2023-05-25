@@ -12,6 +12,7 @@
 8. iOS v16.4
 9. macOS v13.3.1
 10. Xcode v14.3
+11. NodeJS v19.3.0
 ```
 
 ### Command to start the Appium service on local system: (if required)
