@@ -25,10 +25,13 @@ public class AppiumDriverServiceTest {
 
     @BeforeAll
     public void setup(){
+        String device = System.getProperty("appium.ios.device", "iPhone 12");
+        System.out.println("device: " + device);
+
         appiumDriverService = AppiumDriverService.getAppiumDriverServiceInstance();
 //        appiumDriverLocalService = appiumDriverService.startAppiumService();
 
-        iosDriver = appiumDriverService.initDriver();
+        iosDriver = appiumDriverService.initDriver(device);
         dashboard = new Dashboard(iosDriver);
         switches = new Switches(iosDriver);
         uiCatalogHeader = new UiCatalogHeader(iosDriver);

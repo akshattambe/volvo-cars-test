@@ -23,10 +23,10 @@ public final class AppiumDriverService {
         return appiumDriverService;
     }
 
-    public IOSDriver initDriver(){
+    public IOSDriver initDriver(String device){
         String appiumServerURLStr = "http://0.0.0.0:4723/";
 
-        DesiredCapabilities desiredCapabilities = setDesiredCapabilities();
+        DesiredCapabilities desiredCapabilities = setDesiredCapabilities(device);
         return startDriver(appiumServerURLStr, desiredCapabilities);
     }
 
@@ -84,10 +84,8 @@ public final class AppiumDriverService {
         }
     }
 
-    private DesiredCapabilities setDesiredCapabilities(){
+    private DesiredCapabilities setDesiredCapabilities(String device){
         // Set the desired capabilities
-        String device = System.getProperty("appium.ios.device", "iPhone 12");
-        System.out.println("device: " + device);
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "16.4");
