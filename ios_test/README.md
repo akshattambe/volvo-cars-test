@@ -3,14 +3,14 @@
 ### Tools Used
 ```
 1. Programming language - Java
-2. JDK version 17
+2. JDK v17
 3. Build tool - Maven
 4. Test Framework - JUnit Jupiter
-5. Appium server 2.0
+5. Appium server v2.0
 6. java-client v8.5.0
-7. Selenium-java v 4.9.1
-8. iOS v 16.4.1
-9. macOS 13.3.1
+7. Selenium-java v4.9.1
+8. iOS v16.4
+9. macOS v13.3.1
 10. Xcode v14.3
 ```
 
