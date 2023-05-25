@@ -40,16 +40,6 @@ public class AppiumDriverServiceTest {
         steppers = new Steppers(iosDriver);
         sliders = new Sliders(iosDriver);
         pickerView = new PickerView(iosDriver);
-
-        String PHOTOS_BUNDLE_ID = "com.apple.mobileslideshow";
-        String BUNDLE_ID = "com.example.apple-samplecode.UICatalog";
-        HashMap args = new HashMap<>();
-        args.put("bundleId", PHOTOS_BUNDLE_ID);
-        iosDriver.executeScript("mobile: launchApp", args);
-        Thread.sleep(1000);
-        args.put("bundleId", BUNDLE_ID);
-        iosDriver.executeScript("mobile: activateApp", args);
-        System.out.println("swap app test");
     }
 
     @AfterAll
@@ -149,9 +139,17 @@ public class AppiumDriverServiceTest {
          */
         assertTrue(uiCatalogHeader.backToDashboard_isDisplayed());
         uiCatalogHeader.clickBackToDashboard();
-//
-//        /**
-//         * Put application in the Background ,Open Last Message in the Mobile / Simulator and then open application again.
-//         */
+
+        /**
+         * Put application in the Background ,Open Last Message in the Mobile / Simulator and then open application again.
+         */
+        String PHOTOS_BUNDLE_ID = "com.apple.mobileslideshow";
+        String BUNDLE_ID = "com.example.apple-samplecode.UICatalog";
+        HashMap args = new HashMap<>();
+        args.put("bundleId", PHOTOS_BUNDLE_ID);
+        iosDriver.executeScript("mobile: launchApp", args);
+        Thread.sleep(1000);
+        args.put("bundleId", BUNDLE_ID);
+        iosDriver.executeScript("mobile: activateApp", args);
     }
 }
