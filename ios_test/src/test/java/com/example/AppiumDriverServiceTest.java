@@ -45,7 +45,7 @@ public class AppiumDriverServiceTest {
         } catch (Exception e) {
             LOG.info("IOS App Path is not set. Continuing with the IOS_APP_PATH provided in the config.properties file.");
         }
-//        appiumDriverLocalService = appiumDriverService.startAppiumService(); ***********
+        appiumDriverLocalService = appiumDriverService.startAppiumService();
 
         iosDriver = appiumDriverService.initDriver(appPath);
         dashboard = new Dashboard(iosDriver);
@@ -64,7 +64,7 @@ public class AppiumDriverServiceTest {
     public void teardown(){
         //Appium Service will continue to run in this case.
         appiumDriverService.quitDriver(iosDriver);
-//        appiumDriverService.stopAppiumService(appiumDriverLocalService); ***********
+        appiumDriverService.stopAppiumService(appiumDriverLocalService);
     }
 
     /**
