@@ -50,13 +50,5 @@ However, if you wish to run the project from IntelliJ CE, you will need to do fo
 2. Add `--add-opens java.base/java.lang=ALL-UNNAMED` to JVM arguments as shown in the screenshot.
 3. Go to Edit Configuration and set the values as shown in the screenshot.
 
-..
+...
 
-**JVM Arguments Setter**
-
-![JVM Arguments Setter](/Users/akshat.tambe/Downloads/JVMArgumentsSetter.png?raw=true "JVM Arguments Setter")
-
-
-**Edit Configuration**
-
-![Edit Configuration](/Users/akshat.tambe/Downloads/EditConfiguration.png?raw=true "Edit Configuration")
