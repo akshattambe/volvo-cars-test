@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -24,7 +26,7 @@ public class AppiumDriverServiceTest {
     private PickerView pickerView;
 
     @BeforeAll
-    public void setup(){
+    public void setup() throws InterruptedException {
         String device = System.getProperty("appium.ios.device", "iPhone 12");
         System.out.println("device: " + device);
 
@@ -38,6 +40,16 @@ public class AppiumDriverServiceTest {
         steppers = new Steppers(iosDriver);
         sliders = new Sliders(iosDriver);
         pickerView = new PickerView(iosDriver);
+
+        String PHOTOS_BUNDLE_ID = "com.apple.mobileslideshow";
+        String BUNDLE_ID = "com.example.apple-samplecode.UICatalog";
+        HashMap args = new HashMap<>();
+        args.put("bundleId", PHOTOS_BUNDLE_ID);
+        iosDriver.executeScript("mobile: launchApp", args);
+        Thread.sleep(1000);
+        args.put("bundleId", BUNDLE_ID);
+        iosDriver.executeScript("mobile: activateApp", args);
+        System.out.println("swap app test");
     }
 
     @AfterAll
