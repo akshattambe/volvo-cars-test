@@ -52,3 +52,11 @@ However, if you wish to run the project from IntelliJ CE, you will need to do fo
 
 ...
 
+**JVM Arguments Setter**
+
+![JVM Arguments Setter](/Users/akshat.tambe/Downloads/JVMArgumentsSetter.jpg?raw=true "JVM Arguments Setter")
+
+
+**Edit Configuration**
+
+![Edit Configuration](/Users/akshat.tambe/Downloads/EditConfiguration.jpg?raw=true "Edit Configuration")
