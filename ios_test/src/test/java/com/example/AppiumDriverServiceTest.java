@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.Utils.PropertiesReader;
 import com.example.pages.ios.*;
 import com.example.service.AppiumDriverService;
 import io.appium.java_client.ios.IOSDriver;
@@ -25,6 +26,8 @@ public class AppiumDriverServiceTest {
     private Sliders sliders;
     private PickerView pickerView;
 
+    private PropertiesReader propertiesReader;
+
     @BeforeAll
     public void setup() throws InterruptedException {
         String device = System.getProperty("appium.ios.device", "iPhone 12");
@@ -40,6 +43,7 @@ public class AppiumDriverServiceTest {
         steppers = new Steppers(iosDriver);
         sliders = new Sliders(iosDriver);
         pickerView = new PickerView(iosDriver);
+        propertiesReader = new PropertiesReader();
     }
 
     @AfterAll
@@ -50,6 +54,7 @@ public class AppiumDriverServiceTest {
     }
     @Test
     public void test() throws InterruptedException {
+
         /**
          * 1. Click on Switches
          */
@@ -143,13 +148,30 @@ public class AppiumDriverServiceTest {
         /**
          * Put application in the Background ,Open Last Message in the Mobile / Simulator and then open application again.
          */
-        String PHOTOS_BUNDLE_ID = "com.apple.mobileslideshow";
-        String BUNDLE_ID = "com.example.apple-samplecode.UICatalog";
+        String PHOTOS_BUNDLE_ID = propertiesReader.readConfProperties().getProperty("PHOTOS_BUNDLE_ID");
+        String APP_BUNDLE_ID = propertiesReader.readConfProperties().getProperty("APP_BUNDLE_ID");
+
         HashMap args = new HashMap<>();
         args.put("bundleId", PHOTOS_BUNDLE_ID);
         iosDriver.executeScript("mobile: launchApp", args);
         Thread.sleep(1000);
-        args.put("bundleId", BUNDLE_ID);
+        args.put("bundleId", APP_BUNDLE_ID);
+        iosDriver.executeScript("mobile: activateApp", args);
+    }
+
+//    @Test
+    public void test2() throws InterruptedException {
+        /**
+         * Put application in the Background ,Open Last Message in the Mobile / Simulator and then open application again.
+         */
+        String PHOTOS_BUNDLE_ID = propertiesReader.readConfProperties().getProperty("PHOTOS_BUNDLE_ID");
+        String APP_BUNDLE_ID = propertiesReader.readConfProperties().getProperty("APP_BUNDLE_ID");
+
+        HashMap args = new HashMap<>();
+        args.put("bundleId", PHOTOS_BUNDLE_ID);
+        iosDriver.executeScript("mobile: launchApp", args);
+        Thread.sleep(1000);
+        args.put("bundleId", APP_BUNDLE_ID);
         iosDriver.executeScript("mobile: activateApp", args);
     }
 }
