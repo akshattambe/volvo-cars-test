@@ -40,3 +40,23 @@ Below options are available if you want to run the code based on the custom conf
 
 
     `mvn test -Dappium.ios.appPath="path-to-UIKitCatalog.app"`
+
+### Support for JDK-17 with Appium
+The project has been build to work with JDK-17 when running from the cmd line. 
+
+However, if you wish to run the project from IntelliJ CE, you will need to do following steps:
+
+1. Install `JVM Arguments Setter` plugging from IntelliJ marketplace.
+2. Add `--add-opens java.base/java.lang=ALL-UNNAMED` to JVM arguments as shown in the screenshot.
+3. Go to Edit Configuration and set the values as shown in the screenshot.
+
+..
+
+**JVM Arguments Setter**
+
+![JVM Arguments Setter](/Users/akshat.tambe/Downloads/JVMArgumentsSetter.png?raw=true "JVM Arguments Setter")
+
+
+**Edit Configuration**
+
+![Edit Configuration](/Users/akshat.tambe/Downloads/EditConfiguration.png?raw=true "Edit Configuration")
