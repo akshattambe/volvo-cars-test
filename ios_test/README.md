@@ -5,7 +5,7 @@
 1. Programming language - Java
 2. JDK version 17
 3. Build tool - Maven
-4. Test Framework - JUnit 4.13.2
+4. Test Framework - JUnit Jupiter
 5. Appium server 2.0
 6. java-client v8.5.0
 7. Selenium-java v 4.9.1
