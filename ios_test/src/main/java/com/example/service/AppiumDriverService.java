@@ -61,7 +61,7 @@ public final class AppiumDriverService {
 
         // Print the Appium server URL
         String appiumServerUrl = appiumDriverLocalService.getUrl().toString();
-        System.out.println("Appium Server started: " + appiumServerUrl);
+        LOG.info("Appium Server started: " + appiumServerUrl);
         return appiumDriverLocalService;
     }
 
@@ -100,7 +100,7 @@ public final class AppiumDriverService {
     public void stopAppiumService(AppiumDriverLocalService appiumDriverLocalService){
         if (appiumDriverLocalService.isRunning()) {
             appiumDriverLocalService.stop();
-            System.out.println(Boolean.toString(appiumDriverLocalService.isRunning()));
+            LOG.info(Boolean.toString(appiumDriverLocalService.isRunning()));
         }
     }
 
